@@ -1,0 +1,16 @@
+@import url("font-awesome.min.css");
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic"); */
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro"); */
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+   :root { font-family: 'Inter var', sans-serif; }
+}
+
+.graph {
+	padding: 0.5em 0 1em 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 800px!important;
+}

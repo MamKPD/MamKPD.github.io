@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MamKPD</title>
+  <!-- Bootstrap -->
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
+  <style>
+    body {
+      background: rgb(255, 255, 255) no-repeat fixed top left;
+      font-family: "Inter", 'Open Sans', sans-serif;
+    }
+  </style>
+
+</head>
+
+<!-- cover -->
+<section>
+  <div class="jumbotron text-center mt-0">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <!-- Title -->
+          <h2 style="font-size:30px;"><strong>MamKPD</strong>: A Simple Mamba Baseline for 2D Keypoint Detection</h2>
+          <h4 style="color:#6e6e6e;"> CVPR 2025 Submission</h4>
+          <hr>
+          <h6>
+            <!-- <a class="a2" href="https://github.com/YHDang" target="_blank">Yonghao Dang</a><sup>1</sup>&nbsp; &nbsp; -->
+            <br>
+            <br>
+
+            <!-- <p>
+              <sup>1</sup>Institute of artificial intelligence, Beijing University of Posts and Telecommunications&nbsp; &nbsp;
+            </p> -->
+            <!-- <p> <sup>*</sup> Corresponding author &nbsp;
+              <br>
+            </p> -->
+          </h6>
+          <!-- <p> <a class="btn btn-secondary btn-lg" href="" role="button">Paper</a> 
+                <a class="btn btn-secondary btn-lg" href="" role="button">Code</a> 
+                <a class="btn btn-secondary btn-lg" href="" role="button">Data</a> </p> -->
+
+          <div class="row justify-content-center">
+            <div class="column">
+              <p class="mb-5">
+                <a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank">
+                  <i class="fa fa-file"></i> Paper </a>
+              </p>
+            </div>
+            <div class="column">
+              <p class="mb-5">
+                <a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank">
+                  <i class="fa fa-github-alt"></i> Supplementary </a>
+              </p>
+            </div>
+            <div class="column">
+              <p class="mb-5">
+                <a class="btn btn-large btn-light" href="./index.html" role="button"
+                  target="_blank">
+                  <i class="fa fa-github-alt"></i> Code </a>
+              </p>
+            </div>
+            <!-- <div class="column">
+                  <p class="mb-5">
+                    <a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank" style="pointer-events: none">
+                <i class="fa fa-github-alt"></i> Dataset (Coming soon) </a> </p>
+              </div> -->
+            <!-- <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank" style="pointer-events: none">
+                <i class="fa fa-github-alt"></i> Dataset (Coming soon) </a> </p>
+              </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2QZiEocDjK8?si=pDdMgAG7oZqsczGy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/nHUrguG99iw?si=48xcWF2etqUF_vea" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- abstract -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2><strong>Abstract</strong></h2>
+        <hr style="margin-top:0px">
+        <p class="text-justify">
+          2D keypoint detection that aims to locate every joint for the human or animal is important in computer vision tasks. Despite conventional CNN-based and Transformer-based methods achieving impressive results, these approaches suffer from balancing efficiency and performance. This paper aims to propose a novel, simple, yet effective baseline for addressing 2D kepoint detection tasks. The state space model (SSM) has recently received much attention due to its powerful performance and efficiency. This paper proposes a novel, simple Mamba-based framework for 2D Keypoint Detection named MamKPD, which firstly applies the state space model to detect keypoints for humans and animals. Specifically, we propose to use the Mamba block following patch merging as the encoder. Patch merging aggregates information from different patches, which enhances the multi-scale feature extraction capability of the Mamba block. In addition, we adopt a heatmap decoder consisting of several transposed convolutional layers to obtain positional information on joints. We conduct extensive experiments on commonly used benchmarks, including the MS COCO, MPII, and AP-10K datasets, where the proposed PoseMamba achieves competitive results with minimal parameters.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2><strong>Method</strong></h2>
+        <hr style="margin-top:0px">
+        <!-- <h3 style="margin-top:20px; margin-bottom:20px; color:#717980"><b>Full pipeline</b></h3> -->
+        <div class="row justify-content-center" style="align-items:center; display:flex;">
+          <img src="images/method.jpg" alt="input" class="img-responsive graph" width="75%" />
+        </div>
+        <p class="text-justify">
+          <b>Overview</b> of the proposed MamKPD is illustrated in Figure (a). Figure (b) and (c) display Stem and MamKPD block structures.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<br>
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2><strong>Experimental Results</strong></h2>
+        <hr style="margin-top:0px">
+        <p class="text-justify">
+          <b>Comparisons with state-of-the-art methods on the COCO val2017 set.</b> 
+          Bold text indicates the best results, while underlined text denotes the second-best results. † denotes the methods reproduced on our server.     
+        </p>
+        <div class="row justify-content-center" style="align-items:center; display:flex;">
+          <img src="images/coco.jpg" alt="input" class="img-responsive graph" width="75%" />
+        </div>
+
+        <p class="text-justify">
+          <b>Comparisons with state-of-the-art methods on the MPII validation set.</b> † represents the method reproduced on our platform without pre-trained backbone on the ImageNet dataset.
+
+        </p>
+        <div class="row justify-content-center" style="align-items:center; display:flex;">
+          <img src="images/mpii.jpg" alt="input" class="img-responsive graph" width="75%" />
+        </div>
+
+        <p class="text-justify">
+          <b>Comparisons with state-of-the-art methods on the AP-10K testing set.</b> † represents the method reproduced on our platform without pre-trained backbone on the ImageNet dataset. 
+
+        </p>
+        <div class="row justify-content-center" style="align-items:center; display:flex;">
+          <img src="images/ap10k.jpg" alt="input" class="img-responsive graph" width="80%" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<br>
+<br>
+
+<!--   
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>Language-guided Dexterous Grasping</strong></h2>
+            <hr style="margin-top:0px">
+              <div class="row justify-content-center" style="align-items:center; display:flex;">
+                <img src="images/language.png" alt="input" class="img-responsive graph" width="60%"/>
+              </div>
+              <p class="text-justify">
+                <b>Qualitative results of language-guided grasp proposal selection</b>.
+                CLIP can select proposals complying with the language instruction, 
+                allowing goal-conditioned policy to execute potentially functional grasps.
+              </p>
+            <br>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>-->
+
+  <!-- <section> 
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>Qualitative results</strong></h2>
+          <hr style="margin-top:0px">
+          <div class="row justify-content-center" style="align-items:center; display:flex;">
+            <img src="images/gallery2.png" alt="input" class="img-responsive graph" width="60%"/>
+          </div>
+          <div class="row justify-content-center" style="align-items:center; display:flex;">
+            <img src="images/gallery.png" alt="input" class="img-responsive graph" width="100%"/>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> -->
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      macros: {
+        bm: ["{\\boldsymbol #1}", 1],
+      }
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+
+</html>
